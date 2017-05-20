@@ -26,11 +26,6 @@ export class ProductComponent
 
      this.products=this._productService.getProducts();
     
-     /*
-     using the snapshot property
-     this.pageNum=this.route.snapshot.queryParams["pageNum"];
-     console.log("Initial value " , this.pageNum)
-      */
      this.sub = this._Activatedroute.queryParams
                     .subscribe(params => { 
                      this.pageNum = +params['pageNum']||0;
