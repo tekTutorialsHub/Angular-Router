@@ -14,7 +14,7 @@ export class ProductDetailComponent
 
    product:Product;
    id;
-   sub;
+   
 
    constructor(private _Activatedroute:ActivatedRoute,
                private _router:Router,
@@ -22,6 +22,24 @@ export class ProductDetailComponent
    }
 
 
+   onBack(): void {
+      this._router.navigate(['product']);
+   }
+   
+
+   /* Using snapshot*/
+
+  //  ngOnInit() {
+  //      this.id=this._Activatedroute.snapshot.params['id'];
+  //      let products=this._productService.getProducts();
+  //      this.product=products.find(p => p.productID==this.id);
+  //  }
+   
+
+  /* Using Subscription */
+
+  sub;
+  
    ngOnInit() {
 
       this.sub=this._Activatedroute.params.subscribe(params => { 
@@ -31,19 +49,6 @@ export class ProductDetailComponent
       
       });
    }
-
-   /* Using snapshot
-   ngOnInit() {
-       this.id=this._Activatedroute.snapshot.params['id'];
-       let products=this._productService.getProducts();
-       this.product=products.find(p => p.productID==this.id);
-   }
-   */
-
-   onBack(): void {
-      this._router.navigate(['product']);
-   }
-
 
    ngOnDestroy() {
      this.sub.unsubscribe();
