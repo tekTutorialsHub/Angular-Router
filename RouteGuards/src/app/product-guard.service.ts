@@ -12,16 +12,16 @@ export class ProductGuardService implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): boolean {
 
+
         console.log("canActivate");
         console.log(route);
         console.log(state);
 
-        
+        //return true    //remove comments to return true
+
         alert('You are not allowed to view this page. You are redirected to Home Page');
-        this._router.navigate(["home"]);
+        //this._router.navigate(["home"]);
         return false;
     }
-    
-
 
 }
