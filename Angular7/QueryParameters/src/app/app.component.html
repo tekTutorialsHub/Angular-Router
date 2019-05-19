@@ -1,0 +1,24 @@
+<div class="container">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong> {{title}} </strong></a>
+    </div>
+
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']">Home</a></li>
+        <div class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Page No"  [(ngModel)]="pageNum">
+        </div>
+      </div>
+      <li class="nav"><a [routerLink]="['product']" [queryParams]="{ pageNum: pageNum }">Product</a></li>
+      <li><a [routerLink]="['contact']">Contact us</a></li>
+    </ul>
+  </div>
+</nav>
+
+ <router-outlet></router-outlet>
+
+</div>
