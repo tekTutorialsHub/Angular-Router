@@ -1,0 +1,26 @@
+<h1>Product Details Page</h1>
+
+<div>
+product : {{product.name}}
+price : {{ product.price}}
+</div>
+
+<div>
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['overview']">OverView </a></li>
+        <li><a [routerLink]="['spec']">Specification </a></li>
+        <li><a [routerLink]="['../3']">load Product 3 </a></li>
+    </ul>
+</div>
+
+
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<div>
+<p>
+    <a class='btn btn-default' (click)="onBack()">Back to Product List </a>
+</p>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong> {{title}} </strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']">Home</a></li>
+        <li><a [routerLink]="['product']">Product</a></li>
+        <li><a [routerLink]="['contact']">Contact us</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['product/detail/2']">Goto Product 2 Overview</a></li>
+        <li><a [routerLink]="['product','detail','2']">Goto  Product 2 Overview</a></li>    
+
+        <li><a [routerLink]="['product/detail/2/spec']">Goto Product 2 specification</a></li>
+        <li><a [routerLink]="['product','detail','2','spec']">Goto Product 2 specification</a></li>   
+    </ul>
+    
+  </div>
+</nav>
+
+<div>
+ <a class='btn btn-default' (click)="goToOverview('2')">Goto Product 2 Overview </a>
+ <a class='btn btn-default' (click)="goToSpec('2')">Goto Product 2 Spec </a>
+</div>
+
+<router-outlet></router-outlet>
+</div>
