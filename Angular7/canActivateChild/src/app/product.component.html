@@ -1,0 +1,25 @@
+<h1>Product List</h1>
+   <p> This is a protected component </p>
+
+   <div class='table-responsive'>
+   <table class='table'>
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Price</th>
+               <th></th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let product of products;">
+               <td><a [routerLink]="['/product/view',product.productID]">{{product.name}}</a></td>
+               <td>{{product.price}}</td>
+               <td><a [routerLink]="['/product/view',product.productID]">View</a></td>
+               <td><a [routerLink]="['/product/edit',product.productID]">Edit</a></td>
+           </tr>
+       </tbody>
+     </table>
+  </div>
+
+  <router-outlet></router-outlet>
