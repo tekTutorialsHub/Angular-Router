@@ -1,0 +1,22 @@
+<div class="container">
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong> {{title}} </strong>Demo</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']" routerLinkActive="{{getClass()}}">Home</a></li>
+
+
+        <li><a [routerLink]="['product']" [routerLinkActive]="['active','home']">Product</a></li>
+        <li><a [routerLink]="['product']" [routerLinkActive]="['test']">Product</a></li>
+        <li><a [routerLink]="['contact']" routerLinkActive="active">Contact us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+</div>

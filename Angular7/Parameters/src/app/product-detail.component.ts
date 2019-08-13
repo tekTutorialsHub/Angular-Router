@@ -21,35 +21,56 @@ export class ProductDetailComponent
    }
 
    
+
+
    /* Using snapshot */
-   ngOnInit() {
-       this.id=this._Activatedroute.snapshot.params['id'];
-       let products=this._productService.getProducts();
-       this.product=products.find(p => p.productID==this.id);
-   }
+   // ngOnInit() {
+
+   //    //This still works but is deprecated
+   //    //this.id=this._Activatedroute.snapshot.params['id'];  
+
+   //    this.id=this._Activatedroute.snapshot.paramMap.get("id");
+
+      
+   //    let products=this._productService.getProducts();
+   //    this.product=products.find(p => p.productID==this.id);
+   // }
    
 
-   onBack(): void {
-      this._router.navigate(['product']);
-   }
+
+
+
 
    /* Using Subscribe */
-   /*
+   
    sub;
 
    ngOnInit() {
 
-      this.sub=this._Activatedroute.params.subscribe(params => { 
-          this.id = params['id']; 
+      this.sub=this._Activatedroute.paramMap.subscribe(params => { 
+         console.log(params);
+          this.id = params.get('id'); 
           let products=this._productService.getProducts();
           this.product=products.find(p => p.productID==this.id);    
-      
       });
+
+      // This params is deprecated
+
+      //this.sub=this._Activatedroute.params.subscribe(params => { 
+      //    this.id = params['id']; 
+      //    let products=this._productService.getProducts();
+      //    this.product=products.find(p => p.productID==this.id);    
+      //
+      //});
    }
 
    ngOnDestroy() {
      this.sub.unsubscribe();
    }
-   */
+   
 
+
+   onBack(): void {
+      this._router.navigate(['product']);
+   }
 }
